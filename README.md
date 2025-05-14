@@ -51,6 +51,9 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 sudo apt-get install jenkins
 ```
+...
+check with ps -ef | grep jenkins
+...
 
 **Note: ** By default, Jenkins will not be accessible to the external world due to the inbound traffic restriction by AWS. Open port 8080 in the inbound traffic rules as show below.
 
@@ -124,6 +127,8 @@ systemctl restart docker
 ```
 
 Once you are done with the above steps, it is better to restart Jenkins.
+
+Switch user su - jenkins
 
 ```
 http://<ec2-instance-public-ip>:8080/restart
